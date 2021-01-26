@@ -1,0 +1,60 @@
+<a-entity id="explore" class="exploreObjects" bind__visible="explore">
+
+    <!--
+    <a-entity geometry="primitive: plane; width: 4; height: 2;" material="src: #img-earth-gray" 
+      storms="src: #json-storms; img: #img-storm" 
+      bind__storms="
+      startDate: animation.startDate; 
+      date: date; 
+      days: animation.days; 
+      daysPerSec: animation.daysPerSec; 
+      loop: animation.loop; 
+      enabled: animation.enabled"
+      >
+      <a-entity position="0 0 0.001"
+        geometry="primitive: plane; width: 4; height: 2;"
+        material="src: #canvas-geographic-lines; transparent: true;"
+        geojson-texture="
+          canvas: #canvas-geographic-lines;
+          src: #json-geographic-lines;"
+        >
+      </a-entity>
+    </a-entity>
+    -->
+    <!--
+               <a-entity visible="true" id="atmosphere"
+                geometry="primitive: sphere; radius: 3; segmentsWidth: 80; segmentsHeight: 60;"
+                      scale="1.05 1.05 1.05"
+
+                      atmosphere-material="earthRadius: 3;"
+
+                ></a-entity>
+               -->
+
+    <a-entity 
+        geometry="primitive: sphere; radius: 3; segmentsWidth: 60; segmentsHeight: 60;" material="src: #img-earth-gray; side: double" 
+        glow
+      >
+    </a-entity>
+      <a-entity 
+        geometry="primitive: sphere; radius: 3.02;"
+        material="src: #canvas-geographic-lines; transparent: true; side: double;"
+        geojson-texture="
+          canvas: #canvas-geographic-lines;
+          src: #json-geographic-lines;"
+        >
+        </a-entity>
+
+    <a-entity 
+      geometry="primitive: sphere; radius: 3.04;"  
+      rotation="0 180 0"
+      storm-tracks="src: #csv-storms; drawDuration: 150" 
+      bind__storm-tracks="year: year; yearTo: yearTo"
+      year-state="year: 2000"
+      Banimation__storm="property: year-state.year; from: 2000; to: 2020; dur: 60000; round: true; easing: linear"
+      Bbind__animation__storm="enabled: animation.enabled"
+      >
+    </a-entity>
+
+
+</a-entity>

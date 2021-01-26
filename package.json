@@ -1,0 +1,99 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "deploy": "ghpages -p .ghpages && rm -rf .ghpages",
+    "now": "npm run predeploy && now .ghpages --prod && rm -rf .ghpages",
+    "lint": "semistandard -v | snazzy",
+    "lint:fix": "semistandard --fix",
+    "predeploy": "npm run build && shx mkdir -p .ghpages && cp -r now.json index.html assets build .ghpages",
+    "start": "webpack-dev-server --host 0.0.0.0 --progress --colors --hot-only --inline --port 8080"
+  },
+  "dependencies": {
+    "aframe-geojson-component": "^2.0.3",
+    "aframe-lensflare-component": "^1.0.3",
+    "aframe-orbit-controls": "^1.3.0",
+    "aframe-post-message-component": "^2.0.0",
+    "aframe-star-system-component": "^1.0.0",
+    "aframe-state-component": "6.7.0",
+    "aframe-toggle-controls-component": "^1.1.3",
+    "d3-scale-chromatic": "^1.5.0",
+    "nouislider": "^14.6.3",
+    "papaparse": "^5.1.1",
+    "three": "^0.123.0",
+    "wnumb": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-do-expressions": "^7.2.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.2.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "aframe-super-hot-html-loader": "*",
+    "aframe-super-hot-loader": "*",
+    "ansi-html": "0.0.7",
+    "autoprefixer": "^9.6.0",
+    "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "cross-env": "5.2.0",
+    "css-loader": "^3.0.0",
+    "debug": "^4.1.1",
+    "diff-dom": "^4.1.3",
+    "ghpages": "0.0.10",
+    "html-entities": "^1.2.1",
+    "html-require-loader": "*",
+    "ip": "1.1.5",
+    "json-loader": "^0.5.7",
+    "nunjucks": "3.2.0",
+    "postcss-loader": "^3.0.0",
+    "semistandard": "13.0.1",
+    "shx": "^0.3.2",
+    "snazzy": "8.0.0",
+    "style-loader": "^0.23.1",
+    "super-nunjucks-loader": "*",
+    "url-loader": "^2.0.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "3.3.4",
+    "webpack-dev-server": "^3.7.1",
+    "webpack-glsl-loader": "^1.0.1",
+    "webpack-sources": "1.3.0",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2"
+  },
+  "semistandard": {
+    "globals": [
+      "AFRAME",
+      "THREE"
+    ],
+    "ignore": [
+      "build/**"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  }
+}

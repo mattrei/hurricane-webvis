@@ -1,0 +1,21 @@
+    <a-camera id="camera" position="0 0 0" look-controls="enabled: false"
+                               orbit-controls="target: 0 0 0; minDistance: 4; maxDistance: 8; initialPosition: 0 0 6; maxPolarAngle: 180; minPolarAngle: 0;
+                               autoRotate: true; autoRotateSpeed: 0.2;">
+          <a-cursor
+              bind__cursor="rayOrigin: rayOrigin; fuse: isMobile; fuseTimeout: fuseTimeout"
+              raycaster="objects: [data-raycastable]"
+              bind__raycaster="objects: cursorObjects; interval: raycasterInterval"
+              bind__visible="cursorVisible && isMobile" 
+            >
+          </a-cursor>
+            <!--
+          <a-entity id="hud" visible="true" position="0 0 -2">
+          
+            <a-text width="1"
+                    position="0 0 1.5"
+                    bind__value="hud.year"
+                    Banimation="property: opacity; from: 0.5; to: 1; loop: true; dir: alternate; easing: linear; dur: 1500;">
+            </a-text>
+            </a-entity>
+            -->
+        </a-camera>

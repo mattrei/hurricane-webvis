@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hurricane WebVis</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate" />
+
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="build/build.js"></script>
+    <link href="node_modules/nouislider/distribute/nouislider.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+font-family: 'Montserrat', sans-serif;
+}
+h2 {
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+}
+h3 {
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+}
+p {
+text-align: center;
+}
+
+.ui {
+  position: absolute;
+  z-index: 1;
+}
+button{
+    margin: 30px;
+}
+.menubutton {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 10px 10px;
+  font-size: 25px;
+  cursor: pointer;
+  border-color: black;
+  border-radius: 5px;
+}
+
+.menubutton:hover {
+  background-color: #3fb8af;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+#info {
+  width: 60%;
+  left: 15%;
+  top: 10%;
+  background-color: rgba(29, 53, 62, 0.9);
+  padding: 2em;
+  margin: 2rem;
+  border-radius: 15px;
+  border: 3px solid darkgrey;
+}
+.infobox {
+  color: white;
+  letter-spacing:0.1em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.infobox>img {
+  width: 100%;
+  max-width: 400px;
+}
+
+#close {
+  position: absolute;
+  right: -30px;
+  top: -20px;
+  color: white;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+}
+#close:hover {
+  color: red;
+}
+
+</style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

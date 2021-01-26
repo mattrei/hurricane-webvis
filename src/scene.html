@@ -1,0 +1,24 @@
+<require path="templates/overlay.html"></require>
+<a-scene 
+         loading-srceen="enabled: false"
+  vr-mode-ui="enabled: false"
+  post-message="type: aframe-scene" listen-message="type: aframe-state" url-parameter
+  animation__storm="year; from: 2000; to: 2020; dur: 60000; round: true; easing: linear"
+
+  background="color: black"
+
+  main-ui
+
+  Bdate-looper
+  Bbind__date-looper="days: animation.days; daysPerSec: animation.daysPerSec; loop: animation.loop; enabled: animation.enabled"
+>
+
+  <a-entity star-system="count: 10000; radius: 300; depth: 300"></a-entity>
+
+  <a-sphere id="flare" radius="0.05" color="yellow" lensflare="createLight:true; relative: true; src: #flare-asset; position:0 0 0.06; lightColor:yellow; intensity: 5; lightType: spot; lightDecay: 500" position="0 0 -150"></a-sphere>
+
+  <require path="templates/assets.html"></require>
+  <require path="templates/main.html"></require>
+  <require path="templates/player.html"></require>
+
+</a-scene>
